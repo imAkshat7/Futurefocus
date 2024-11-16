@@ -130,7 +130,7 @@ export const Home = () => {
             <VStack spacing={4} align="center" pt={8}>
               <Heading size="2xl">Shape Your Future Career</Heading>
               <Text fontSize="xl" color="gray.600" textAlign="center">
-                Select your skills and let AI guide you to your perfect career path
+                Select your skills and let Future Focus guide you to your perfect career path
               </Text>
             </VStack>
           </MotionBox>
