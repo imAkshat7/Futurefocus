@@ -15,8 +15,6 @@ export const skills: Skill[] = [
   { id: '11', name: 'Ruby', icon: '💎', category: 'Development' },
   { id: '12', name: 'Spring', icon: '🍃', category: 'Development' },
   { id: '13', name: 'Swift', icon: '🕊️', category: 'Development' },
-  {id: '65', name: 'C++', icon: '🅲➕➕', category: 'Development' },
-  {id: '66', name: 'C', icon: '🅲', category: 'Development' },
 
   // Cloud & Infrastructure
   { id: '14', name: 'AWS', icon: '☁️', category: 'Cloud' },
@@ -33,7 +31,6 @@ export const skills: Skill[] = [
   { id: '23', name: 'MongoDB', icon: '🍃', category: 'Data' },
   { id: '24', name: 'Hadoop', icon: '🐘', category: 'Data' },
   { id: '25', name: 'Tableau', icon: '📊', category: 'Data' },
-  { id: '26', name: 'Power', icon: '⚡', category: 'Data' },
   { id: '27', name: 'Oracle', icon: '🗄️', category: 'Data' },
   { id: '28', name: 'MySQL', icon: '🐬', category: 'Data' },
   { id: '29', name: 'NoSQL', icon: '🔄', category: 'Data' },
