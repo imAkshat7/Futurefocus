@@ -32,7 +32,6 @@ export const skills: Skill[] = [
   { id: '24', name: 'Hadoop', icon: '🐘', category: 'Data' },
   { id: '25', name: 'Tableau', icon: '📊', category: 'Data' },
   { id: '27', name: 'Oracle', icon: '🗄️', category: 'Data' },
-  { id: '28', name: 'MySQL', icon: '🐬', category: 'Data' },
   { id: '29', name: 'NoSQL', icon: '🔄', category: 'Data' },
   { id: '30', name: 'Cassandra', icon: '👁️', category: 'Data' },
   { id: '31', name: 'Spark', icon: '✨', category: 'Data' },
