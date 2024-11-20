@@ -7,7 +7,6 @@ export const skills: Skill[] = [
   { id: '3', name: 'Python', icon: '🐍', category: 'Development' },
   { id: '4', name: 'Java', icon: '☕', category: 'Development' },
   { id: '5', name: 'JavaScript', icon: '🟡', category: 'Development' },
-  { id: '6', name: 'Django', icon: '🎯', category: 'Development' },
   { id: '7', name: 'Express', icon: '🚀', category: 'Development' },
   { id: '8', name: 'Flutter', icon: '📱', category: 'Development' },
   { id: '9', name: 'Kotlin', icon: '🎯', category: 'Development' },
