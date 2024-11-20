@@ -29,6 +29,8 @@ export const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
   const toast = useToast();
 
+  const MINIMUM_SKILLS = 3; // Minimum required skills
+
   // Filter skills based on search query
   const filteredSkills = useMemo(() => {
     const query = searchQuery.toLowerCase();
@@ -59,9 +61,9 @@ export const Home = () => {
 
   // Handle form submission
   const handleSubmit = async () => {
-    if (selectedSkillIds.length === 0) {
+    if (selectedSkillIds.length < MINIMUM_SKILLS) {
       toast({
-        title: 'Please select at least one skill',
+        title: `Please select at least ${MINIMUM_SKILLS} skills.`,
         status: 'warning',
         duration: 3000,
         isClosable: true,
@@ -69,18 +71,13 @@ export const Home = () => {
       return;
     }
 
-    // Map selected skill IDs to their corresponding names
     const selectedSkillNames = selectedSkillIds.map(
       (id) => skills.find((skill) => skill.id === id)?.name || ''
     );
 
-    console.log('Selected skill names:', selectedSkillNames); // Debugging
-
     setIsLoading(true);
     try {
-      const matches = await submitSkills(selectedSkillNames); // Pass names instead of IDs
-      console.log('Career Matches Response:', matches);
-
+      const matches = await submitSkills(selectedSkillNames);
       const careerArray = Array.isArray(matches) ? matches : [matches];
       const uniqueCareers = Array.from(
         new Map(
@@ -100,7 +97,6 @@ export const Home = () => {
         setCareers([]);
       }
     } catch (error) {
-      console.error('Error fetching career matches:', error);
       toast({
         title: 'Error fetching career matches',
         description: 'Something went wrong. Please try again later.',
@@ -130,7 +126,7 @@ export const Home = () => {
             <VStack spacing={4} align="center" pt={8}>
               <Heading size="2xl">Shape Your Future Career</Heading>
               <Text fontSize="xl" color="gray.600" textAlign="center">
-                Select your skills and let Future Focus guide you to your perfect career path
+                Select your skills and let AI guide you to your perfect career path
               </Text>
             </VStack>
           </MotionBox>
@@ -191,6 +187,7 @@ export const Home = () => {
               loadingText="Finding matches..."
               w={{ base: 'full', md: 'auto' }}
               alignSelf="center"
+              isDisabled={selectedSkillIds.length < MINIMUM_SKILLS} // Disable if less than required
             >
               Find Career Matches
             </Button>
